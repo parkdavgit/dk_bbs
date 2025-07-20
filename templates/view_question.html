@@ -44,8 +44,6 @@
 
     <h5 class="border-bottom my-3 py-2">{{question.answer_set.count}}개의 답변이 있습니다.</h5>
 
-
-
     <form action="{% url 'answer_create' question.id %}" method="post" class="my-3">
 
  
@@ -61,11 +59,7 @@
         
         </div>
         </div> 
-        
-        
-
-
-
+      
         {% endfor %} 
         
         
@@ -80,8 +74,6 @@
      {% endfor %}
      </div>
     {% endif %}
-
-
 
     <div class="form-group">
         <textarea name="content" id="content" class="form-control" rows="10"></textarea>

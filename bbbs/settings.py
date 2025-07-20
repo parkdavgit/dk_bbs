@@ -129,3 +129,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ] ## 추가된 부분
+
+DEFAULT_AUTO_FIELD='django.db.models.AutoField' 

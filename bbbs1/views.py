@@ -19,7 +19,7 @@ def home(request):
 
      
      
-
+@login_required(login_url='login')
 def question_create(request):
     if request.method == 'POST':
         form = NewQuestionForm(request.POST)
@@ -102,17 +102,14 @@ def user_search(request):
 
     subject = request.POST.get('subject', '').strip()
     
-    polls = Question.objects.filter(subject=subject)
+    question_search = Question.objects.filter(subject=subject)
      
     page = request.GET.get('page','1')
-    paginator = Paginator(polls, 4)
-    polls = paginator.get_page(page)
-    return render(request, 'home.html',{'question_list':polls})  
+    paginator = Paginator(question_search, 4)
+    question_search = paginator.get_page(page)
+    return render(request, 'home.html',{'question_list':question_search})  
 
 
 def profile(request):
-     
-     
-    
     context = {'user': request.user}
     return render(request, 'profile.html', context)                                                   
