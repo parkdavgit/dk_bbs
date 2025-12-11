@@ -79,10 +79,11 @@ WSGI_APPLICATION = 'bbbs.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', ## 추가된 부분
-        'NAME': 'ddkim', ## 추가된 부분
-        'USER': 'postgres', ## 추가된 부분
+        'NAME': 'postgres', ## 추가된 부분
+        'USER': 'dongpak', ## 추가된 부분
         'PASSWORD':'1019', ## 추가된 부분
-        'HOST':'localhost' ## 추가된 부분
+        'HOST':'localhost', ## 추가된 부분
+        'PORT': '5432',
     }
 }
 
